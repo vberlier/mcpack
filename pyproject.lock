@@ -92,10 +92,33 @@ optional = false
 python-versions = "*"
 platform = "*"
 
+[[package]]
+name = "tox"
+version = "3.0.0"
+description = "virtualenv-based automation of test activities"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+platform = "unix"
+
+[package.dependencies]
+virtualenv = ">=1.11.2"
+six = "*"
+pluggy = ">=0.3.0,<1.0"
+py = ">=1.4.17"
+[[package]]
+name = "virtualenv"
+version = "16.0.0"
+description = "Virtual Python Environment builder"
+category = "dev"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*"
+platform = "*"
+
 [metadata]
 python-versions = "^3.6"
 platform = "*"
-content-hash = "0bd926079af2f019f04de8fa1ea134791d7340096b8dc4fe17cd46bb3d5e7b0f"
+content-hash = "d105a9731fbaa4eed718dbe61fa207349f7ceb5dbf83a2e37a7997ebd1b0ef86"
 
 [metadata.hashes]
 atomicwrites = [ "a24da68318b08ac9c9c45029f4a10371ab5b20e4226738e150e6e7c571630ae6", "240831ea22da9ab882b551b31d4225591e5e447a68c5e188db5b89ca1d487585",]
@@ -107,3 +130,5 @@ py = [ "983f77f3331356039fdd792e9220b7b8ee1aa6bd2b25f567a963ff1de5a64f6a", "29c9
 pytest = [ "26838b2bc58620e01675485491504c3aa7ee0faf335c37fcd5f8731ca4319591", "32c49a69566aa7c333188149ad48b58ac11a426d5352ea3d8f6ce843f88199cb",]
 setuptools = [ "8fca9275c89964f13da985c3656cb00ba029d7f3916b37990927ffdf264e7926", "f7cddbb5f5c640311eb00eab6e849f7701fa70bf6a183fc8a2c33dd1d1672fb2",]
 six = [ "832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb", "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9",]
+tox = [ "9ee7de958a43806402a38c0d2aa07fa8553f4d2c20a15b140e9f771c2afeade0", "96efa09710a3daeeb845561ebbe1497641d9cef2ee0aea30db6969058b2bda2f",]
+virtualenv = [ "2ce32cd126117ce2c539f0134eb89de91a8413a29baac49cbab3eb50e2026669", "ca07b4c0b54e14a91af9f34d0919790b016923d157afda5efdde55c96718f752",]

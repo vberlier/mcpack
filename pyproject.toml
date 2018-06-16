@@ -27,3 +27,4 @@ python = "^3.6"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
+tox = "^3.0"
