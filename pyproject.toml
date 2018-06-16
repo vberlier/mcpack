@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "mcpack"
+version = "0.1.0"
+description = "A python library for programmatically creating and editing minecraft datapacks"
+
+license = "MIT"
+
+authors = ["Valentin Berlier <berlier.v@gmail.com>"]
+
+readme = "README.md"
+
+repository = "https://github.com/vberlier/mcpack"
+homepage = "https://github.com/vberlier/mcpack"
+
+keywords = [
+  "minecraft",
+  "mcfunction",
+  "advancements",
+  "loot-tables",
+  "recipes",
+  "structures",
+  "datapack",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
