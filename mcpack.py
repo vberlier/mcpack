@@ -25,7 +25,7 @@ Example usage:
 __all__ = ['DataPack', 'Namespace', 'Advancement', 'Function', 'LootTable',
            'Recipe', 'Structure', 'BlockTag', 'ItemTag', 'FluidTag',
            'FunctionTag']
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 import json
 import pathlib
