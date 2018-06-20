@@ -35,6 +35,11 @@ from collections import defaultdict
 from typing import DefaultDict, Dict, List, Optional, Union
 from dataclasses import dataclass, field, fields, asdict
 
+from nbtlib import nbt, tag, schema
+
+
+LATEST_DATA_VERSION = 1502
+
 
 def write_json(path, json_data):
     """Write pretty indented json data."""
@@ -132,13 +137,61 @@ class Recipe(JsonItem):
     cookingtime: Optional[int] = None
 
 
-class Structure(NamespaceItem):
+StructureSchema = schema('StructureSchema', {
+    'DataVersion': tag.Int,
+    'author': tag.String,
+    'size': tag.List[tag.Int],
+    'palette': tag.List[schema('State', {
+        'Name': tag.String,
+        'Properties': tag.Compound,
+    })],
+    'blocks': tag.List[schema('Block', {
+        'state': tag.Int,
+        'pos': tag.List[tag.Int],
+        'nbt': tag.Compound,
+    })],
+    'entities': tag.List[schema('Entity', {
+        'pos': tag.List[tag.Double],
+        'blockPos': tag.List[tag.Int],
+        'nbt': tag.Compound,
+    })],
+}, strict=True)
+
+
+def item_property(name):
+    return property(fget=lambda self: self.__getitem__(name),
+                    fset=lambda self, value: self.__setitem__(name, value))
+
+
+class Structure(NamespaceItem, StructureSchema):
     """Minecraft structure."""
 
     folder = 'structures'
     extension = '.nbt'
 
-    # TODO: Implement structures
+    data_version = item_property('DataVersion')
+    author = item_property('author')
+    size = item_property('size')
+    palette = item_property('palette')
+    blocks = item_property('blocks')
+    entities = item_property('entities')
+
+    def __init__(self, *args, data_version=LATEST_DATA_VERSION, **kwargs):
+        self.author = ''
+        self.size = [0, 0, 0]
+        self.palette = []
+        self.blocks = []
+        self.entities = []
+
+        super().__init__(*args, **kwargs)
+        self.data_version = data_version
+
+    def dump(self, path):
+        nbt.File({'': self}, gzipped=True).save(path)
+
+    @classmethod
+    def load(cls, path):
+        return cls(nbt.load(path, gzipped=True).root)
 
 
 @dataclass
