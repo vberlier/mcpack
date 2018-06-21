@@ -1,5 +1,6 @@
 # mcpack
 
+[![Build Status](https://travis-ci.com/vberlier/mcpack.svg?branch=master)](https://travis-ci.com/vberlier/mcpack)
 [![PyPI](https://img.shields.io/pypi/v/mcpack.svg)](https://pypi.org/project/mcpack/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mcpack.svg)](https://pypi.org/project/mcpack/)
 
