@@ -38,7 +38,7 @@ from dataclasses import dataclass, field, fields, asdict
 from nbtlib import nbt, tag, schema
 
 
-LATEST_DATA_VERSION = 1503
+DATA_VERSION = 1503
 
 
 def write_json(path, json_data):
@@ -176,7 +176,7 @@ class Structure(NamespaceItem, StructureSchema):
     blocks = item_property('blocks')
     entities = item_property('entities')
 
-    def __init__(self, *args, data_version=LATEST_DATA_VERSION, **kwargs):
+    def __init__(self, *args, data_version=DATA_VERSION, **kwargs):
         self.author = ''
         self.size = [0, 0, 0]
         self.palette = []
