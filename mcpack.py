@@ -38,7 +38,7 @@ from dataclasses import dataclass, field, fields, asdict
 from nbtlib import nbt, tag, schema
 
 
-LATEST_DATA_VERSION = 1502
+LATEST_DATA_VERSION = 1503
 
 
 def write_json(path, json_data):
