@@ -10,7 +10,11 @@ pack['demo:hello'] = Function('say Hello, world!')
 pack['minecraft:load'] = FunctionTag(['demo:hello'])
 
 pack['demo:test'] = Advancement(
-    criteria={'impossible': {'trigger': 'minecraft:impossible'}},
+    criteria={
+        'impossible': {
+            'trigger': 'minecraft:impossible'
+        }
+    },
     rewards={
         'recipes': ['demo:test_rewards/recipe'],
         'loot': ['demo:test_rewards/loot'],
