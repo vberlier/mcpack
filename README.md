@@ -229,6 +229,26 @@ All the attributes can be set in the constructor. They mirror the root propertie
 
 ### Structures
 
+`Structure` objects represent Minecraft structures.
+
+```py
+from mcpack import DataPack, Structure
+
+pack = DataPack('Test', 'Test description.')
+pack['test:foo'] = Structure()
+
+structure = pack['test'].structures['foo']
+
+print(structure.data_version)  # Int(1503)
+print(structure.author)  # String('')
+print(structure.size)  # List[Int]([0, 0, 0])
+print(structure.palette)  # List[State]([])
+print(structure.blocks)  # List[Block]([])
+print(structure.entities)  # List[Entity]([])
+```
+
+All the attributes can be set in the constructor. They mirror the root properties of the structure NBT file format. `mcpack` uses [`nbtlib`](https://github.com/vberlier/nbtlib) to manipulate nbt data. The `Structure` class inherits from an `nbtlib` schema that takes care of wrapping python values with the appropriate nbt tags.
+
 > Check out the [wiki](https://minecraft.gamepedia.com/Structure_block_file_format) for further details.
 
 ### Tags
