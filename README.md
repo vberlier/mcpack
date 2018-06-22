@@ -170,6 +170,26 @@ pack['test:baz/egg'] = FunctionTag(...)
 
 > Check out the [wiki](https://minecraft.gamepedia.com/Tag) for further details.
 
+## Contributing
+
+Contributions are welcome. This project uses [`poetry`](https://poetry.eustace.io/) so you'll need to install it first if you want to be able to work with the project locally.
+
+```sh
+$ curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+```
+
+You should now be able to install the required dependencies.
+
+```sh
+$ poetry install
+```
+
+You can run the tests using `pytest`.
+
+```sh
+$ poetry run pytest
+```
+
 ---
 
 License - [MIT](https://github.com/vberlier/mcpack/blob/master/LICENSE)
