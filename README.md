@@ -31,10 +31,6 @@ $ pip install mcpack
 The `DataPack` class represents a minecraft data pack.
 
 ```py
-DataPack(name, description, pack_format=1)
-```
-
-```py
 from mcpack import DataPack
 
 pack = DataPack('Test', 'Test description.')
@@ -47,20 +43,12 @@ print(pack.namespaces)  # defaultdict(<class 'mcpack.Namespace'>, {})
 You can load already existing data packs using the `load` class method.
 
 ```py
-DataPack.load(path)
-```
-
-```py
 from mcpack import DataPack
 
 pack = DataPack.load('.minecraft/save/New World/datapacks/Test')
 ```
 
 The `dump` method allows you to generate the actual Minecraft data pack. The method will raise a `ValueError` if the data pack already exists. You can explicitly overwrite the existing data pack by setting the `overwrite` argument to `True`.
-
-```py
-pack.dump(path='.', overwrite=False)
-```
 
 ```py
 from mcpack import DataPack
@@ -73,12 +61,6 @@ pack.dump('.minecraft/save/New World/datapacks', overwrite=True)
 ### Namespaces
 
 `Namespace` objects hold references to data pack items using a separate dictionary for each type of item.
-
-```py
-Namespace(advancements={}, functions={}, loot_tables={}, recipes={},
-          structures={}, block_tags={}, item_tags={}, fluid_tags={},
-          function_tags={})
-```
 
 ```py
 from mcpack import Namespace
