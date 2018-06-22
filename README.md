@@ -169,3 +169,7 @@ pack['test:baz/egg'] = FunctionTag(...)
 ### Tags
 
 > Check out the [wiki](https://minecraft.gamepedia.com/Tag) for further details.
+
+---
+
+License - [MIT](https://github.com/vberlier/mcpack/blob/master/LICENSE)
