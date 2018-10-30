@@ -83,6 +83,7 @@ print(namespace.block_tags)  # {}
 print(namespace.item_tags)  # {}
 print(namespace.fluid_tags)  # {}
 print(namespace.function_tags)  # {}
+print(namespace.entity_type_tags)  # {}
 ```
 
 You can add namespaces to `DataPack` objects using the `namespaces` attribute. Note that you won't usually need to create namespaces yourself. If you want to edit a namespace, you just need to retrieve it and the `defaultdict` will create an empty namespace for you if it doesn't already exist.
@@ -105,7 +106,8 @@ Adding items to namespaces is pretty straight-forward. Simply add them to their 
 
 ```py
 from mcpack import (DataPack, Advancement, Function, LootTable, Recipe,
-                    Structure, BlockTag, ItemTag, FluidTag, FunctionTag)
+                    Structure, BlockTag, ItemTag, FluidTag, FunctionTag,
+                    EntityTypeTag)
 
 pack = DataPack('Test', 'Test description.')
 
@@ -118,13 +120,15 @@ pack['test'].block_tags['bar/egg'] = BlockTag(...)
 pack['test'].item_tags['baz'] = ItemTag(...)
 pack['test'].fluid_tags['baz/spam'] = FluidTag(...)
 pack['test'].function_tags['baz/egg'] = FunctionTag(...)
+pack['test'].entity_type_tags['qux'] = EntityTypeTag(...)
 ```
 
 You can also use the `DataPack` object directly. The `__setitem__` method actually checks if the key looks like `namespace:path` and dispatches the item automatically. We can now simplify the previous piece of code quite a bit.
 
 ```py
 from mcpack import (DataPack, Advancement, Function, LootTable, Recipe,
-                    Structure, BlockTag, ItemTag, FluidTag, FunctionTag)
+                    Structure, BlockTag, ItemTag, FluidTag, FunctionTag,
+                    EntityTypeTag)
 
 pack = DataPack('Test', 'Test description.')
 
@@ -137,6 +141,7 @@ pack['test:bar/egg'] = BlockTag(...)
 pack['test:baz'] = ItemTag(...)
 pack['test:baz/spam'] = FluidTag(...)
 pack['test:baz/egg'] = FunctionTag(...)
+pack['test:qux'] = EntityTypeTag(...)
 ```
 
 ### Advancements
@@ -253,7 +258,7 @@ All the attributes can be set in the constructor. They mirror the root propertie
 
 ### Tags
 
-`BlockTag`, `ItemTag`, `FluidTag` and `FunctionTag` objects represent Minecraft block, item, fluid and function tags respectively. They are all identical in structure, the only difference between them is the namespace directory they get written to.
+`BlockTag`, `ItemTag`, `FluidTag`, `FunctionTag` and `EntityTypeTag` objects represent Minecraft block, item, fluid, function and entity type tags respectively. They are all identical in structure, the only difference between them is the namespace directory they get written to.
 
 ```py
 from mcpack import DataPack, BlockTag
