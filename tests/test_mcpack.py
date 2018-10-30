@@ -1,11 +1,12 @@
 import pytest
 
 from mcpack import (DataPack, Advancement, Function, LootTable, Recipe,
-                    Structure, BlockTag, ItemTag, FluidTag, FunctionTag)
+                    Structure, BlockTag, ItemTag, FluidTag, FunctionTag,
+                    EntityTypeTag)
 
 
 ALL_ITEM_TYPES = [Advancement, Function, LootTable, Recipe, Structure,
-                  BlockTag, ItemTag, FluidTag, FunctionTag]
+                  BlockTag, ItemTag, FluidTag, FunctionTag, EntityTypeTag]
 
 
 @pytest.fixture

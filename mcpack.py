@@ -24,7 +24,7 @@ Example usage:
 
 __all__ = ['DataPack', 'Namespace', 'Advancement', 'Function', 'LootTable',
            'Recipe', 'Structure', 'BlockTag', 'ItemTag', 'FluidTag',
-           'FunctionTag']
+           'FunctionTag', 'EntityTypeTag']
 
 __version__ = '0.3.0'
 
@@ -226,6 +226,12 @@ class FunctionTag(TagItem):
     folder = 'tags/functions'
 
 
+class EntityTypeTag(TagItem):
+    """Minecraft entity type tag."""
+
+    folder = 'tags/entity_types'
+
+
 @dataclass
 class Namespace:
     """Minecraft namespace."""
@@ -239,6 +245,7 @@ class Namespace:
     item_tags: Dict[str, ItemTag] = field(default_factory=dict)
     fluid_tags: Dict[str, FluidTag] = field(default_factory=dict)
     function_tags: Dict[str, FunctionTag] = field(default_factory=dict)
+    entity_type_tags: Dict[str, EntityTypeTag] = field(default_factory=dict)
 
     def __post_init__(self):
         self._type_items = {field.type.__args__[1]: getattr(self, field.name)
