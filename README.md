@@ -290,7 +290,7 @@ You should now be able to install the required dependencies.
 $ poetry install
 ```
 
-You can run the tests using `pytest`.
+You can run the tests with `poetry run pytest`.
 
 ```sh
 $ poetry run pytest

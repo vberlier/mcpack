@@ -28,4 +28,3 @@ nbtlib = "^1.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.2"
-tox = "^3.7"

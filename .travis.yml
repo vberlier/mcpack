@@ -1,8 +1,26 @@
+
 language: python
-python: 3.7-dev
-cache: pip
+
+sudo: false
+dist: xenial
+
+cache:
+  pip: true
+  directories:
+    - $HOME/.cache/pypoetry
+
 install:
-  - pip install poetry
-  - poetry install -v
-script:
-  - poetry run pytest
+  - curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+  - source $HOME/.poetry/env
+  - poetry install
+
+script: poetry run pytest
+
+jobs:
+  include:
+    - python: 3.7
+
+    - stage: publish
+      python: 3.7
+      if: tag IS present
+      script: ./publish.sh
