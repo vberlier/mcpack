@@ -16,10 +16,18 @@ Example usage:
     >>> loaded_pack = DataPack.load(datapacks / pack.name)
     >>> pack == loaded_pack
     True
+    >>> len(loaded_pack['my_cool_pack'].functions)
+    11
+    >>> loaded_pack['my_cool_pack'].functions['hello']
+    Function(body='say hello')
 
     >>> # editing the data pack
     >>> loaded_pack['minecraft:load'] = FunctionTag(['my_cool_pack:hello'])
     >>> loaded_pack.dump(datapacks, overwrite=True)
+
+    >>> # loading it again
+    >>> DataPack.load(datapacks / loaded_pack.name)['minecraft'].function_tags
+    {'load': FunctionTag(values=['my_cool_pack:hello'], replace=False)}
 """
 
 __all__ = ['DataPack', 'Namespace', 'Advancement', 'Function', 'LootTable',
