@@ -30,11 +30,11 @@ Example usage:
     {'load': FunctionTag(values=['my_cool_pack:hello'], replace=False)}
 """
 
+
 __all__ = ['DataPack', 'Namespace', 'Advancement', 'Function', 'LootTable',
            'Recipe', 'Structure', 'BlockTag', 'ItemTag', 'FluidTag',
            'FunctionTag', 'EntityTypeTag']
 
-__version__ = '0.3.0'
 
 import json
 import pathlib
