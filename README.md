@@ -199,9 +199,10 @@ pack['test:foo'] = LootTable()
 loot_table = pack['test'].loot_tables['foo']
 
 print(loot_table.pools)  # []
+print(loot_table.type)  # 'generic'
 ```
 
-The `pools` attribute can be set in the constructor. It mirrors the `pools` property of the loot table JSON file format.
+All the attributes can be set in the constructor. They mirror the root properties of the loot table JSON file format.
 
 > Check out the [wiki](https://minecraft.gamepedia.com/Loot_table) for further details.
 
