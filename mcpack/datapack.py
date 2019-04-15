@@ -126,6 +126,7 @@ class LootTable(JsonItem):
     folder = 'loot_tables'
 
     pools: list = field(default_factory=list)
+    type: str = 'generic'
 
 
 @dataclass
