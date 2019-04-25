@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mcpack"
-version = "0.3.6"
+version = "0.3.7"
 description = "A python library for programmatically creating and editing Minecraft data packs"
 authors = ["Valentin Berlier <berlier.v@gmail.com>"]
 license = "MIT"
