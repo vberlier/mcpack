@@ -297,6 +297,12 @@ You can run the tests with `poetry run pytest`.
 $ poetry run pytest
 ```
 
+The project can also download the latest minecraft releases and run tests against the vanilla data pack. You can enable these tests by using the `--vanilla` flag.
+
+```sh
+$ poetry run pytest --vanilla
+```
+
 ---
 
 License - [MIT](https://github.com/vberlier/mcpack/blob/master/LICENSE)
