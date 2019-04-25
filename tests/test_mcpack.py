@@ -35,3 +35,7 @@ def test_overlapping_names(pack, tmpdir):
 
     pack.dump(tmpdir)
     assert DataPack.load(tmpdir / pack.name) == pack
+
+
+def test_vanilla_datapack(vanilla):
+    DataPack.load(vanilla)

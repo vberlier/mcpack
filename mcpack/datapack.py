@@ -127,6 +127,7 @@ class LootTable(JsonItem):
 
     pools: list = field(default_factory=list)
     type: str = 'generic'
+    functions: Optional[list] = None
 
 
 @dataclass
@@ -144,6 +145,7 @@ class Recipe(JsonItem):
     result: Union[dict, str] = field(default_factory=dict)
     experience: Optional[float] = None
     cookingtime: Optional[int] = None
+    count: Optional[int] = None
 
 
 StructureSchema = schema('StructureSchema', {
@@ -154,6 +156,10 @@ StructureSchema = schema('StructureSchema', {
         'Name': tag.String,
         'Properties': tag.Compound,
     })],
+    'palettes': tag.List[tag.List[schema('State', {
+        'Name': tag.String,
+        'Properties': tag.Compound,
+    })]],
     'blocks': tag.List[schema('Block', {
         'state': tag.Int,
         'pos': tag.List[tag.Int],
@@ -182,6 +188,7 @@ class Structure(NamespaceItem, StructureSchema):
     author = item_property('author')
     size = item_property('size')
     palette = item_property('palette')
+    palettes = item_property('palettes')
     blocks = item_property('blocks')
     entities = item_property('entities')
 
@@ -189,6 +196,7 @@ class Structure(NamespaceItem, StructureSchema):
         self.author = ''
         self.size = [0, 0, 0]
         self.palette = []
+        self.palettes = []
         self.blocks = []
         self.entities = []
 
