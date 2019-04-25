@@ -200,6 +200,7 @@ loot_table = pack['test'].loot_tables['foo']
 
 print(loot_table.pools)  # []
 print(loot_table.type)  # 'generic'
+print(loot_table.functions) # None
 ```
 
 All the attributes can be set in the constructor. They mirror the root properties of the loot table JSON file format.
@@ -227,6 +228,7 @@ print(recipe.ingredients)  # None
 print(recipe.result)  # {}
 print(recipe.experience)  # None
 print(recipe.cookingtime)  # None
+print(recipe.count)  # None
 ```
 
 All the attributes can be set in the constructor. They mirror the root properties of the recipe JSON file format.
@@ -249,6 +251,7 @@ print(structure.data_version)  # Int(1503)
 print(structure.author)  # String('')
 print(structure.size)  # List[Int]([0, 0, 0])
 print(structure.palette)  # List[State]([])
+print(structure.palettes)  # List[List[State]]([])
 print(structure.blocks)  # List[Block]([])
 print(structure.entities)  # List[Entity]([])
 ```
