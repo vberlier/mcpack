@@ -145,6 +145,7 @@ class Recipe(JsonItem):
     result: Union[dict, str] = field(default_factory=dict)
     experience: Optional[float] = None
     cookingtime: Optional[int] = None
+    count: Optional[int] = None
 
 
 StructureSchema = schema('StructureSchema', {
