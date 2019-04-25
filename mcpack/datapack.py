@@ -127,6 +127,7 @@ class LootTable(JsonItem):
 
     pools: list = field(default_factory=list)
     type: str = 'generic'
+    functions: Optional[list] = None
 
 
 @dataclass
