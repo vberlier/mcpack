@@ -24,7 +24,7 @@ python = "^3.7"
 nbtlib = "^1.4"
 
 [tool.poetry.dev-dependencies]
-pytest = "^4.5"
+pytest = "^4.6"
 requests = "^2.22"
 
 [build-system]
