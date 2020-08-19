@@ -146,6 +146,8 @@ class Recipe(JsonItem):
     experience: Optional[float] = None
     cookingtime: Optional[int] = None
     count: Optional[int] = None
+    base: Optional[dict] = None
+    addition: Optional[dict] = None
 
 
 StructureSchema = schema('StructureSchema', {
