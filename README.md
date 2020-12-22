@@ -1,3 +1,8 @@
+<h3 align="center">⚠️ THIS PROJECT IS DEPRECATED ⚠️</h3>
+<h3 align="center">Please migrate to <a href="https://github.com/vberlier/beet">https://github.com/vberlier/beet</a></h3>
+
+---
+
 # mcpack
 
 [![Build Status](https://travis-ci.com/vberlier/mcpack.svg?branch=master)](https://travis-ci.com/vberlier/mcpack)
